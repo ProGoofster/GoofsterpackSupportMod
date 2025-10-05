@@ -9,6 +9,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = Goofsterpack.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -17,7 +18,11 @@ public class DataGenerators {
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
-        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+
+        //ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+        ExistingFileHelper existingFileHelper = new ExistingFileHelper(
+                Set.of(), Set.of(), false, null, null);
+
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));

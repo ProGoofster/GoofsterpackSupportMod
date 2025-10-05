@@ -6,9 +6,12 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+
+import java.util.function.Supplier;
 
 public class MineralType {
     public String mineralType;
@@ -16,7 +19,7 @@ public class MineralType {
 
     public float minDrop = 1;
     public float maxDrop = 1;
-    public Item itemDrop;
+    private Supplier<Item> itemSupplier;
     public IntProvider expProvider = ConstantInt.of(0);
 
     public boolean addStone = false;
@@ -58,13 +61,18 @@ public class MineralType {
         return this;
     }
 
-    public Item getItemDrop() {
-        return itemDrop;
+    public MineralType setItemDrop(Supplier<Item> supplier) {
+        this.itemSupplier = supplier;
+        return this;
     }
 
-    public MineralType setItemDrop(Item itemDrop) {
-        this.itemDrop = itemDrop;
+    public MineralType setItemDrop(Item item) {
+        this.itemSupplier = () -> item;
         return this;
+    }
+
+    public Item getItem() {
+        return itemSupplier != null ? itemSupplier.get() : Items.AIR;
     }
 
     public IntProvider getExpProvider() {
@@ -91,6 +99,12 @@ public class MineralType {
 
     public MineralType setAddNether(boolean addNether) {
         this.addNether = addNether;
+        return this;
+    }
+
+    public MineralType setDropCount(int min, int max){
+        minDrop = min;
+        maxDrop = max;
         return this;
     }
 }

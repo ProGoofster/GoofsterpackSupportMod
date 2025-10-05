@@ -2,7 +2,9 @@ package com.jakeberryman.goofsterpack.datagen.loot;
 
 import com.jakeberryman.goofsterpack.block.ModBlocks;
 import com.jakeberryman.goofsterpack.item.ModItems;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -15,6 +17,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -31,15 +34,17 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 //        this.add(ModBlocks.TEST_ORE.get(),
 //                block -> createRedstoneLikeOreDrops(ModBlocks.TEST_ORE.get(), ModItems.TEST_ITEM.get(), 4, 5));
 
+
+
         ModBlocks.ORE_DATA_MAP.forEach((block, data) -> {
             this.add(block.get(),
                     thisBlock -> {
                         if(data.getSecond().maxDrop == 1 && data.getSecond().minDrop == 1){
-                            return createOreDrops(thisBlock, data.getSecond().itemDrop);
-                        } else if (data.getSecond().mineralType.contains("redstone")) {
-                            return createRedstoneLikeOreDrops(thisBlock, data.getSecond().itemDrop, data.getSecond().minDrop, data.getSecond().maxDrop);
+                            return createOreDrops(thisBlock, data.getSecond().getItem());
+                        } else if (data.getSecond().mineralType.contains("redstone") || data.getSecond().mineralType.contains("certus")) {
+                            return createRedstoneLikeOreDrops(thisBlock, data.getSecond().getItem(), data.getSecond().minDrop, data.getSecond().maxDrop);
                         } else {
-                            return createMutliOreDrops(thisBlock, data.getSecond().itemDrop, data.getSecond().minDrop, data.getSecond().maxDrop);
+                            return createMutliOreDrops(thisBlock, data.getSecond().getItem(), data.getSecond().minDrop, data.getSecond().maxDrop);
                         }
                     }
             );
