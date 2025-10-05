@@ -19,10 +19,9 @@ public class ModCreativeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Goofsterpack.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> GOOFSERPACK_TAB = CREATIVE_MODE_TAB.register("goofsterpack_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.TEST_ITEM.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.get("andesite_iron_ore").get()))
                     .title(Component.translatable("creativetab.goofsterpack_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                        pOutput.accept(ModItems.TEST_ITEM.get());
 
                         ModBlocks.ORE_BLOCKS_MAP.entrySet().stream()
                                 .sorted(Map.Entry.comparingByKey())

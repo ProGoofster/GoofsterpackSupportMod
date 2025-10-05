@@ -15,7 +15,7 @@ public class StoneType {
     public MapColor mapColor = MapColor.STONE;
     public SoundType sound = SoundType.STONE;
     public NoteBlockInstrument instrument = NoteBlockInstrument.BASEDRUM;
-    public TagKey<Block> toolTypeTag;
+    public TagKey<Block> toolTypeTag = BlockTags.MINEABLE_WITH_PICKAXE;
 
     public StoneType(String stoneType) {
         this.stoneType = stoneType;

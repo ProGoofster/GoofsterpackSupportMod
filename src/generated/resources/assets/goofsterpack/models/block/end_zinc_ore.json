@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "goofsterpack:block/ores/zinc/end_zinc_ore"
+  }
+}

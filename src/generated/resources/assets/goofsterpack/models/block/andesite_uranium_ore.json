@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "goofsterpack:block/ores/uranium/andesite_uranium_ore"
+  }
+}
