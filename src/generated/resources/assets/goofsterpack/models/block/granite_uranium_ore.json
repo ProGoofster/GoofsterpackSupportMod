@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "goofsterpack:block/ores/uranium/granite_uranium_ore"
+  }
+}

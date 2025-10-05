@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "goofsterpack:block/ores/tin/glacio_tin_ore"
+  }
+}
