@@ -28,11 +28,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 //                .add(ModBlocks.TEST_BLOCK.get());
 
         ModBlocks.ORE_DATA_MAP.forEach((block, data) -> {
-            if (data.getFirst().toolTypeTag != null) {
-                this.tag(data.getFirst().toolTypeTag).add(block.get());
+            if (data.getFirst().getToolTypeTag() != null) {
+                this.tag(data.getFirst().getToolTypeTag()).add(block.get());
             }
-            if (data.getSecond().toolTag != null) {
-                this.tag(data.getSecond().toolTag).add(block.get());
+            if (data.getSecond().getToolTag() != null) {
+                this.tag(data.getSecond().getToolTag()).add(block.get());
             }
         });
     }

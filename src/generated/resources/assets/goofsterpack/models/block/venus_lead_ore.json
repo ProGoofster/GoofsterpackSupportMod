@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "goofsterpack:block/ores/lead/venus_lead_ore"
-  }
-}

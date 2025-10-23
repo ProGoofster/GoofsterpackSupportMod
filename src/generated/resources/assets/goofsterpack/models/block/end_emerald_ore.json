@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "goofsterpack:block/ores/emerald/end_emerald_ore"
-  }
-}

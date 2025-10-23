@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "goofsterpack:block/ores/soil/soul_soil_coal_ore"
-  }
-}

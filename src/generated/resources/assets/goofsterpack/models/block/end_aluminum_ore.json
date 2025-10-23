@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "goofsterpack:block/ores/aluminum/end_aluminum_ore"
-  }
-}

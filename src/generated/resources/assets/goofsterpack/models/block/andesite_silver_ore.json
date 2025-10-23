@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "goofsterpack:block/ores/silver/andesite_silver_ore"
-  }
-}

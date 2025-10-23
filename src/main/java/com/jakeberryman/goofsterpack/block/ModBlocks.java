@@ -34,24 +34,25 @@ public class ModBlocks {
 
     static {
         OreData.MINERALS.forEach(mineral -> {
-            OreData.STONES.forEach(stone -> {
-
-                if (Objects.equals(stone.stoneType, "nether") && !mineral.addNether) return;
-                if (Objects.equals(stone.stoneType, "stone") && !mineral.addStone) return;
-                if (Objects.equals(stone.stoneType, "deepslate") && !mineral.addStone) return;
+            if(mineral.getStoneTypes().isEmpty()) return;
+            mineral.getStoneTypes().forEach(stone -> {
+                if(stone == null){
+                    System.out.println("null stone for mineral: " + mineral.getMineralType());
+                    return;
+                }
 
                 BlockBehaviour.Properties blockProperties = BlockBehaviour.Properties.of()
-                        .mapColor(stone.mapColor)
-                        .instrument(stone.instrument)
+                        .mapColor(stone.getMapColor())
+                        .instrument(stone.getInstrument())
                         .requiresCorrectToolForDrops()
-                        .strength(stone.hardness, stone.blastResistance);
+                        .strength(stone.getHardness(), stone.getBlastResistance());
 
-                RegistryObject<Block> newBlock = registerBlock("%s_%s_ore".formatted(stone.stoneType, mineral.mineralType),
+                RegistryObject<Block> newBlock = registerBlock("%s_%s_ore".formatted(stone.getStoneType(), mineral.getMineralType()),
                         () -> {
-                            if (mineral.mineralType.contains("redstone")) {
-                                return new CustomRedStoneOreBlock(blockProperties, mineral.expProvider);
+                            if (mineral.getMineralType().contains("redstone")) {
+                                return new CustomRedStoneOreBlock(blockProperties, mineral.getExpProvider());
                             } else {
-                                return new DropExperienceBlock(blockProperties, mineral.expProvider);
+                                return new DropExperienceBlock(blockProperties, mineral.getExpProvider());
                             }
                         });
 

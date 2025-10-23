@@ -11,21 +11,21 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class MineralType {
-    public String mineralType;
-    public TagKey<Block> toolTag;
+    protected String mineralType;
+    private TagKey<Block> toolTag;
 
-    public float minDrop = 1;
-    public float maxDrop = 1;
+    private float minDrop = 1;
+    private float maxDrop = 1;
     private Supplier<Item> itemSupplier;
-    public IntProvider expProvider = ConstantInt.of(0);
+    private IntProvider expProvider = ConstantInt.of(0);
 
-    public boolean addStone = false;
-    public boolean addNether = true;
+    private List<StoneType> stoneTypes;
 
-    // Main constructor with toolTag parameter
     public MineralType(String mineralType){
         this.mineralType = mineralType;
     }
@@ -40,6 +40,7 @@ public class MineralType {
 
     public MineralType setToolTag(TagKey<Block> toolTag) {
         this.toolTag = toolTag;
+        stoneTypes = new ArrayList<>();
         return this;
     }
 
@@ -47,18 +48,8 @@ public class MineralType {
         return minDrop;
     }
 
-    public MineralType setMinDrop(float minDrop) {
-        this.minDrop = minDrop;
-        return this;
-    }
-
     public float getMaxDrop() {
         return maxDrop;
-    }
-
-    public MineralType setMaxDrop(float maxDrop) {
-        this.maxDrop = maxDrop;
-        return this;
     }
 
     public MineralType setItemDrop(Supplier<Item> supplier) {
@@ -84,27 +75,23 @@ public class MineralType {
         return this;
     }
 
-    public boolean isAddStone() {
-        return addStone;
-    }
-
-    public MineralType setAddStone(boolean addStone) {
-        this.addStone = addStone;
-        return this;
-    }
-
-    public boolean isAddNether() {
-        return addNether;
-    }
-
-    public MineralType setAddNether(boolean addNether) {
-        this.addNether = addNether;
-        return this;
-    }
-
     public MineralType setDropCount(int min, int max){
         minDrop = min;
         maxDrop = max;
+        return this;
+    }
+
+    public List<StoneType> getStoneTypes() {
+        return stoneTypes;
+    }
+
+    public MineralType setStoneTypes(List<StoneType> stoneTypes) {
+        this.stoneTypes = stoneTypes;
+        return this;
+    }
+
+    public MineralType addStoneType(StoneType stoneType){
+        this.stoneTypes.add(stoneType);
         return this;
     }
 }

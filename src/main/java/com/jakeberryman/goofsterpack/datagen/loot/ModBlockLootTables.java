@@ -39,12 +39,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         ModBlocks.ORE_DATA_MAP.forEach((block, data) -> {
             this.add(block.get(),
                     thisBlock -> {
-                        if(data.getSecond().maxDrop == 1 && data.getSecond().minDrop == 1){
+                        if(data.getSecond().getMaxDrop() == 1 && data.getSecond().getMinDrop() == 1){
                             return createOreDrops(thisBlock, data.getSecond().getItem());
-                        } else if (data.getSecond().mineralType.contains("redstone") || data.getSecond().mineralType.contains("certus")) {
-                            return createRedstoneLikeOreDrops(thisBlock, data.getSecond().getItem(), data.getSecond().minDrop, data.getSecond().maxDrop);
+                        } else if (data.getSecond().getMineralType().contains("redstone") || data.getSecond().getMineralType().contains("certus")) {
+                            return createRedstoneLikeOreDrops(thisBlock, data.getSecond().getItem(), data.getSecond().getMinDrop(), data.getSecond().getMaxDrop());
                         } else {
-                            return createMutliOreDrops(thisBlock, data.getSecond().getItem(), data.getSecond().minDrop, data.getSecond().maxDrop);
+                            return createMutliOreDrops(thisBlock, data.getSecond().getItem(), data.getSecond().getMinDrop(), data.getSecond().getMaxDrop());
                         }
                     }
             );

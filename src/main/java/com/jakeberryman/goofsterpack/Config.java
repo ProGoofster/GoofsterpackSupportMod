@@ -10,9 +10,9 @@ import net.minecraftforge.fml.event.config.ModConfigEvent;
 public class Config {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    private static final ForgeConfigSpec.BooleanValue GENERATE_CERTUS_ORE = BUILDER
-            .comment("Should the mod add Certus Quartz ore from old AE2 versions?")
-            .define("generateCertusOre", false);
+//    private static final ForgeConfigSpec.BooleanValue GENERATE_CERTUS_ORE = BUILDER
+//            .comment("Should the mod add Certus Quartz ore from old AE2 versions?")
+//            .define("generateCertusOre", false);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
@@ -20,6 +20,6 @@ public class Config {
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event) {
-        generateCertusOre = GENERATE_CERTUS_ORE.get();
+//        generateCertusOre = GENERATE_CERTUS_ORE.get();
     }
 }

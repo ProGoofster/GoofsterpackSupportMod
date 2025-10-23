@@ -8,22 +8,18 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 
 public class StoneType {
-    public String stoneType;
-    public float hardness = 3;
-    public float blastResistance = 3;
 
-    public MapColor mapColor = MapColor.STONE;
-    public SoundType sound = SoundType.STONE;
-    public NoteBlockInstrument instrument = NoteBlockInstrument.BASEDRUM;
-    public TagKey<Block> toolTypeTag = BlockTags.MINEABLE_WITH_PICKAXE;
+    private String stoneType;
+    private float hardness = 3;
+    private float blastResistance = 3;
+
+    private MapColor mapColor = MapColor.STONE;
+    private SoundType sound = SoundType.STONE;
+    private NoteBlockInstrument instrument = NoteBlockInstrument.BASEDRUM;
+    private TagKey<Block> toolTypeTag = BlockTags.MINEABLE_WITH_PICKAXE;
 
     public StoneType(String stoneType) {
         this.stoneType = stoneType;
-    }
-
-    public StoneType(String stoneType, MapColor mapColor) {
-        this(stoneType);
-        this.mapColor = mapColor;
     }
 
     public StoneType setStoneType(String stoneType) {
@@ -65,5 +61,33 @@ public class StoneType {
     public StoneType setToolTypeTag(TagKey<Block> toolTypeTag) {
         this.toolTypeTag = toolTypeTag;
         return this;
+    }
+
+    public String getStoneType() {
+        return stoneType;
+    }
+
+    public float getHardness() {
+        return hardness;
+    }
+
+    public float getBlastResistance() {
+        return blastResistance;
+    }
+
+    public MapColor getMapColor() {
+        return mapColor;
+    }
+
+    public SoundType getSound() {
+        return sound;
+    }
+
+    public NoteBlockInstrument getInstrument() {
+        return instrument;
+    }
+
+    public TagKey<Block> getToolTypeTag() {
+        return toolTypeTag;
     }
 }
