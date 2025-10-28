@@ -23,6 +23,24 @@
                 }
             },
             {
+              "state": {
+                "Name": "goofsterpack:mars_osmium_ore"
+              },
+              "target": {
+                "predicate_type": "minecraft:tag_match",
+                "tag": "ad_astra:mars_stone_replaceables"
+              }
+            },
+            {
+              "state": {
+                "Name": "goofsterpack:venus_osmium_ore"
+              },
+              "target": {
+                "predicate_type": "minecraft:tag_match",
+                "tag": "ad_astra:venus_stone_replaceables"
+              }
+            },
+            {
                 "state": {
                     "Name": "goofsterpack:glacio_osmium_ore"
                 },

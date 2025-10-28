@@ -23,6 +23,24 @@
                 }
             },
             {
+              "state": {
+                "Name": "goofsterpack:moon_lead_ore"
+              },
+              "target": {
+                "predicate_type": "minecraft:tag_match",
+                "tag": "ad_astra:moon_stone_replaceables"
+              }
+            },
+            {
+              "state": {
+                "Name": "goofsterpack:mars_lead_ore"
+              },
+              "target": {
+                "predicate_type": "minecraft:tag_match",
+                "tag": "ad_astra:mars_stone_replaceables"
+              }
+            },
+            {
                 "state": {
                     "Name": "goofsterpack:glacio_lead_ore"
                 },

@@ -23,6 +23,24 @@
                 }
             },
             {
+              "state": {
+                "Name": "goofsterpack:venus_uranium_ore"
+              },
+              "target": {
+                "predicate_type": "minecraft:tag_match",
+                "tag": "ad_astra:venus_stone_replaceables"
+              }
+            },
+            {
+              "state": {
+                "Name": "goofsterpack:mercury_uranium_ore"
+              },
+              "target": {
+                "predicate_type": "minecraft:tag_match",
+                "tag": "ad_astra:mercury_stone_replaceables"
+              }
+            },
+            {
                 "state": {
                     "Name": "goofsterpack:glacio_uranium_ore"
                 },

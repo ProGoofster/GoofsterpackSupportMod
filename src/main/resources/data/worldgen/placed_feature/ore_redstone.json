@@ -1,9 +1,9 @@
 {
-  "feature": "goofsterpack:zinc_ore",
+  "feature": "goofsterpack:ore_redstone",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 8
+      "count": 4
     },
     {
       "type": "minecraft:in_square"
@@ -13,12 +13,15 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 70
+          "absolute": 15
         },
         "min_inclusive": {
-          "absolute": -63
+          "above_bottom": 0
         }
       }
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }

@@ -23,6 +23,24 @@
                 }
             },
             {
+              "state": {
+                "Name": "goofsterpack:moon_nickel_ore"
+              },
+              "target": {
+                "predicate_type": "minecraft:tag_match",
+                "tag": "ad_astra:moon_stone_replaceables"
+              }
+            },
+            {
+              "state": {
+                "Name": "goofsterpack:mercury_nickel_ore"
+              },
+              "target": {
+                "predicate_type": "minecraft:tag_match",
+                "tag": "ad_astra:mercury_stone_replaceables"
+              }
+            },
+            {
                 "state": {
                     "Name": "goofsterpack:glacio_nickel_ore"
                 },
