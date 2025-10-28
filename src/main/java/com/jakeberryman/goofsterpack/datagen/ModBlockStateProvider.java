@@ -33,6 +33,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     public ResourceLocation oreBlockTexture(Block block) {
         ResourceLocation name = ForgeRegistries.BLOCKS.getKey(block);
-        return ResourceLocation.fromNamespaceAndPath(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/ores/" + name.getPath().split("_")[1] + "/" + name.getPath());
+        String oreName = name.getPath().split("_")[1];
+        if (oreName.matches("ore")){
+            oreName = name.getPath().split("_")[0];
+        }
+        return ResourceLocation.fromNamespaceAndPath(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/ores/" + oreName + "/" + name.getPath());
     }
 }

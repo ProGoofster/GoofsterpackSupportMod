@@ -47,7 +47,14 @@ public class ModBlocks {
                         .requiresCorrectToolForDrops()
                         .strength(stone.getHardness(), stone.getBlastResistance());
 
-                RegistryObject<Block> newBlock = registerBlock("%s_%s_ore".formatted(stone.getStoneType(), mineral.getMineralType()),
+                String blockName;
+                if(stone.getStoneType().matches("stone")) {
+                    blockName = "%s_ore".formatted(mineral.getMineralType());
+                } else {
+                    blockName = "%s_%s_ore".formatted(stone.getStoneType(), mineral.getMineralType());
+                }
+
+                RegistryObject<Block> newBlock = registerBlock(blockName,
                         () -> {
                             if (mineral.getMineralType().contains("redstone")) {
                                 return new CustomRedStoneOreBlock(blockProperties, mineral.getExpProvider());

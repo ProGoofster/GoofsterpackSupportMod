@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "goofsterpack:ingot_osmium_from_smelting_venus_osmium_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_venus_osmium_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "goofsterpack:venus_osmium_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_venus_osmium_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "goofsterpack:ingot_osmium_from_smelting_venus_osmium_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glacio_desh_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "goofsterpack:glacio_desh_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "goofsterpack:desh_ingot_from_blasting_glacio_desh_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_glacio_desh_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "goofsterpack:desh_ingot_from_blasting_glacio_desh_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

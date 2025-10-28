@@ -11,12 +11,9 @@ import mekanism.common.resource.PrimaryResource;
 import mekanism.common.resource.ResourceType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.*;
 
@@ -85,11 +82,13 @@ public final class OreData {
 //        );
         MINERALS.add(new MineralType("gold")
                 .setItemDrop(Items.RAW_GOLD)
+                .setSmeltedItem(Items.GOLD_INGOT)
                 .setToolTag(BlockTags.NEEDS_IRON_TOOL)
                 .addStoneType(STONES.get("glacio"))
         );
         MINERALS.add(new MineralType("redstone")
                 .setItemDrop(Items.REDSTONE)
+                .setSmeltedItem(Items.REDSTONE)
                 .setExpProvider(UniformInt.of(1, 5))
                 .setToolTag(BlockTags.NEEDS_IRON_TOOL)
                 .setDropCount(4,5)
@@ -97,12 +96,14 @@ public final class OreData {
         );
         MINERALS.add(new MineralType("diamond")
                 .setItemDrop(Items.DIAMOND)
+                .setSmeltedItem(Items.DIAMOND)
                 .setExpProvider(UniformInt.of(3, 7))
                 .setToolTag(BlockTags.NEEDS_IRON_TOOL)
                 .addStoneType(STONES.get("glacio"))
         );
         MINERALS.add(new MineralType("emerald")
                 .setItemDrop(Items.EMERALD)
+                .setSmeltedItem(Items.EMERALD)
                 .setExpProvider(UniformInt.of(3, 7))
                 .setToolTag(BlockTags.NEEDS_IRON_TOOL)
                 .addStoneType(STONES.get("glacio"))
@@ -131,12 +132,14 @@ public final class OreData {
                     .setItemDrop(AllItems.RAW_ZINC)
                     .setToolTag(BlockTags.NEEDS_IRON_TOOL)
                     .addStoneType(STONES.get("glacio"))
+                    .setSmeltedItem(AllItems.ZINC_INGOT)
             );
         }
 
         if(ModList.get().isLoaded("immersiveengineering")){
             MINERALS.add(new MineralType("aluminum")
                     .setItemDrop(() -> IEItems.Metals.RAW_ORES.get(EnumMetals.ALUMINUM).asItem())
+                    .setSmeltedItem(() -> IEItems.Metals.INGOTS.get(EnumMetals.ALUMINUM).asItem())
                     .setToolTag(BlockTags.NEEDS_STONE_TOOL)
                     .addStoneType(STONES.get("moon"))
                     .addStoneType(STONES.get("mars"))
@@ -144,6 +147,7 @@ public final class OreData {
             );
             MINERALS.add(new MineralType("lead")
                     .setItemDrop(() -> IEItems.Metals.RAW_ORES.get(EnumMetals.LEAD).asItem())
+                    .setSmeltedItem(() -> IEItems.Metals.INGOTS.get(EnumMetals.LEAD).asItem())
                     .setToolTag(BlockTags.NEEDS_IRON_TOOL)
                     .addStoneType(STONES.get("moon"))
                     .addStoneType(STONES.get("mars"))
@@ -151,6 +155,7 @@ public final class OreData {
             );
             MINERALS.add(new MineralType("silver")
                     .setItemDrop(() -> IEItems.Metals.RAW_ORES.get(EnumMetals.SILVER).asItem())
+                    .setSmeltedItem(() -> IEItems.Metals.INGOTS.get(EnumMetals.SILVER).asItem())
                     .setToolTag(BlockTags.NEEDS_IRON_TOOL)
                     .addStoneType(STONES.get("moon"))
                     .addStoneType(STONES.get("mercury"))
@@ -158,6 +163,7 @@ public final class OreData {
             );
             MINERALS.add(new MineralType("nickel")
                     .setItemDrop(() -> IEItems.Metals.RAW_ORES.get(EnumMetals.NICKEL).asItem())
+                    .setSmeltedItem(() -> IEItems.Metals.INGOTS.get(EnumMetals.NICKEL).asItem())
                     .setToolTag(BlockTags.NEEDS_IRON_TOOL)
                     .addStoneType(STONES.get("moon"))
                     .addStoneType(STONES.get("mercury"))
@@ -168,6 +174,7 @@ public final class OreData {
         if(ModList.get().isLoaded("mekanism")){
             MINERALS.add(new MineralType("osmium")
                     .setItemDrop(MekanismItems.PROCESSED_RESOURCES.get(ResourceType.RAW, PrimaryResource.OSMIUM))
+                    .setSmeltedItem(MekanismItems.PROCESSED_RESOURCES.get(ResourceType.INGOT, PrimaryResource.OSMIUM))
                     .setToolTag(BlockTags.NEEDS_STONE_TOOL)
                     .addStoneType(STONES.get("mars"))
                     .addStoneType(STONES.get("venus"))
@@ -175,6 +182,7 @@ public final class OreData {
             );
             MINERALS.add(new MineralType("tin")
                     .setItemDrop(MekanismItems.PROCESSED_RESOURCES.get(ResourceType.RAW, PrimaryResource.TIN))
+                    .setSmeltedItem(MekanismItems.PROCESSED_RESOURCES.get(ResourceType.INGOT, PrimaryResource.TIN))
                     .setToolTag(BlockTags.NEEDS_STONE_TOOL)
                     .addStoneType(STONES.get("mars"))
                     .addStoneType(STONES.get("venus"))
@@ -182,6 +190,7 @@ public final class OreData {
             );
             MINERALS.add(new MineralType("uranium")
                     .setItemDrop(MekanismItems.PROCESSED_RESOURCES.get(ResourceType.RAW, PrimaryResource.URANIUM))
+                    .setSmeltedItem(MekanismItems.PROCESSED_RESOURCES.get(ResourceType.INGOT, PrimaryResource.URANIUM))
                     .setToolTag(BlockTags.NEEDS_IRON_TOOL)
                     .addStoneType(STONES.get("venus"))
                     .addStoneType(STONES.get("mercury"))
@@ -189,6 +198,7 @@ public final class OreData {
             );
             MINERALS.add(new MineralType("fluorite")
                     .setItemDrop(MekanismItems.FLUORITE_GEM)
+                    .setSmeltedItem(MekanismItems.FLUORITE_GEM)
                     .setToolTag(BlockTags.NEEDS_STONE_TOOL)
                     .setDropCount(2,4)
                     .addStoneType(STONES.get("venus"))
@@ -201,51 +211,56 @@ public final class OreData {
 
             MINERALS.add(new MineralType("desh")
                     .setItemDrop(earth.terrarium.adastra.common.registry.ModItems.RAW_DESH)
+                    .setSmeltedItem(earth.terrarium.adastra.common.registry.ModItems.DESH_INGOT)
                     .setToolTag(BlockTags.NEEDS_DIAMOND_TOOL)
                     .addStoneType(STONES.get("stone"))
                     .addStoneType(STONES.get("glacio"))
             );
             MINERALS.add(new MineralType("ostrum")
                     .setItemDrop(earth.terrarium.adastra.common.registry.ModItems.RAW_OSTRUM)
+                    .setSmeltedItem(earth.terrarium.adastra.common.registry.ModItems.OSTRUM_INGOT)
                     .setToolTag(BlockTags.NEEDS_DIAMOND_TOOL)
                     .addStoneType(STONES.get("stone"))
                     .addStoneType(STONES.get("glacio"))
             );
             MINERALS.add(new MineralType("calorite")
                     .setItemDrop(earth.terrarium.adastra.common.registry.ModItems.RAW_CALORITE)
+                    .setSmeltedItem(earth.terrarium.adastra.common.registry.ModItems.CALORITE_INGOT)
                     .setToolTag(BlockTags.NEEDS_DIAMOND_TOOL)
                     .addStoneType(STONES.get("stone"))
                     .addStoneType(STONES.get("glacio"))
             );
             MINERALS.add(new MineralType("etrium")
                     .setItemDrop(ModItems.RAW_ETRIUM)
+                    .setSmeltedItem(earth.terrarium.adastra.common.registry.ModItems.ETRIUM_INGOT)
                     .setToolTag(BlockTags.NEEDS_DIAMOND_TOOL)
                     .addStoneType(STONES.get("stone"))
                     .addStoneType(STONES.get("glacio"))
+                    .addStoneType(STONES.get("deepslate"))
             );
         }
 
-        if(ModList.get().isLoaded("ae2")){
-            MINERALS.add(new MineralType("certus_quartz")
-                    .setItemDrop(AEItems.CERTUS_QUARTZ_CRYSTAL.asItem())
-                    .setDropCount(1,2)
-                    .setExpProvider(UniformInt.of(2, 5))
-                    .setToolTag(BlockTags.NEEDS_STONE_TOOL)
-                    .addStoneType(STONES.get("stone"))
-                    .addStoneType(STONES.get("deepslate"))
-                    .addStoneType(STONES.get("end"))
-                    .addStoneType(STONES.get("glacio"))
-            );
-            MINERALS.add(new MineralType("charged_certus_quartz")
-                    .setItemDrop(AEItems.CERTUS_QUARTZ_CRYSTAL.asItem())
-                    .setDropCount(1,2)
-                    .setExpProvider(UniformInt.of(2, 5))
-                    .setToolTag(BlockTags.NEEDS_STONE_TOOL)
-                    .addStoneType(STONES.get("stone"))
-                    .addStoneType(STONES.get("deepslate"))
-                    .addStoneType(STONES.get("end"))
-                    .addStoneType(STONES.get("glacio"))
-            );
-        }
+//        if(ModList.get().isLoaded("ae2")){
+//            MINERALS.add(new MineralType("certus_quartz")
+//                    .setItemDrop(AEItems.CERTUS_QUARTZ_CRYSTAL.asItem())
+//                    .setDropCount(1,2)
+//                    .setExpProvider(UniformInt.of(2, 5))
+//                    .setToolTag(BlockTags.NEEDS_STONE_TOOL)
+//                    .addStoneType(STONES.get("stone"))
+//                    .addStoneType(STONES.get("deepslate"))
+//                    .addStoneType(STONES.get("end"))
+//                    .addStoneType(STONES.get("glacio"))
+//            );
+//            MINERALS.add(new MineralType("charged_certus_quartz")
+//                    .setItemDrop(AEItems.CERTUS_QUARTZ_CRYSTAL.asItem())
+//                    .setDropCount(1,2)
+//                    .setExpProvider(UniformInt.of(2, 5))
+//                    .setToolTag(BlockTags.NEEDS_STONE_TOOL)
+//                    .addStoneType(STONES.get("stone"))
+//                    .addStoneType(STONES.get("deepslate"))
+//                    .addStoneType(STONES.get("end"))
+//                    .addStoneType(STONES.get("glacio"))
+//            );
+//        }
     }
 }

@@ -22,6 +22,21 @@ public class MineralType {
     private float minDrop = 1;
     private float maxDrop = 1;
     private Supplier<Item> itemSupplier;
+
+    public Supplier<Item> getSmeltedItem() {
+        return smeltedItem;
+    }
+
+    public MineralType setSmeltedItem(Supplier<Item> smeltedItem) {
+        this.smeltedItem = smeltedItem;
+        return this;
+    }
+    public MineralType setSmeltedItem(Item item) {
+        this.smeltedItem = () -> item;
+        return this;
+    }
+
+    private Supplier<Item> smeltedItem;
     private IntProvider expProvider = ConstantInt.of(0);
 
     private List<StoneType> stoneTypes;

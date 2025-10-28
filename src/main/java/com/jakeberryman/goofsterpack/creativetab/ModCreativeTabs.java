@@ -12,6 +12,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.Comparator;
 import java.util.Map;
 
 public class ModCreativeTabs {
@@ -19,15 +20,13 @@ public class ModCreativeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Goofsterpack.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> GOOFSERPACK_TAB = CREATIVE_MODE_TAB.register("goofsterpack_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.get("andesite_iron_ore").get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.get("glacio_etrium_ore").get()))
                     .title(Component.translatable("creativetab.goofsterpack_tab"))
                     .displayItems((pParameters, pOutput) -> {
 
-                        ModBlocks.ORE_BLOCKS_MAP.entrySet().stream()
-                                .sorted(Map.Entry.comparingByKey())
-                                .forEach(entry -> {
-                                    pOutput.accept(entry.getValue().get());
-                                });
+                        ModItems.ITEMS.getEntries().stream()
+                                .sorted(Comparator.comparing(entry -> entry.getId().getPath()))
+                                .forEach(entry -> pOutput.accept(entry.get()));
 
                         pOutput.accept(Items.COMMAND_BLOCK);
                     })

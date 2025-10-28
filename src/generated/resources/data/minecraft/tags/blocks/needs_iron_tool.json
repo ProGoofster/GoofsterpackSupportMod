@@ -2,11 +2,9 @@
   "values": [
     "goofsterpack:mars_lead_ore",
     "goofsterpack:glacio_lead_ore",
-    "goofsterpack:glacio_ostrum_ore",
     "goofsterpack:glacio_zinc_ore",
     "goofsterpack:moon_lead_ore",
     "goofsterpack:glacio_silver_ore",
-    "goofsterpack:stone_calorite_ore",
     "goofsterpack:mercury_uranium_ore",
     "goofsterpack:glacio_redstone_ore",
     "goofsterpack:glacio_emerald_ore",
@@ -14,14 +12,10 @@
     "goofsterpack:glacio_uranium_ore",
     "goofsterpack:glacio_gold_ore",
     "goofsterpack:venus_uranium_ore",
-    "goofsterpack:glacio_calorite_ore",
     "goofsterpack:mercury_silver_ore",
-    "goofsterpack:stone_ostrum_ore",
     "goofsterpack:moon_nickel_ore",
-    "goofsterpack:stone_desh_ore",
     "goofsterpack:glacio_diamond_ore",
     "goofsterpack:moon_silver_ore",
-    "goofsterpack:glacio_desh_ore",
     "goofsterpack:mercury_nickel_ore"
   ]
 }

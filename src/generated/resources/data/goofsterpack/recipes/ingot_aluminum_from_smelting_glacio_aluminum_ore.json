@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "smelting",
+  "ingredient": {
+    "item": "goofsterpack:glacio_aluminum_ore"
+  },
+  "result": "immersiveengineering:ingot_aluminum"
+}

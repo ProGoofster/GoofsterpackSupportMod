@@ -1,6 +1,13 @@
 {
   "values": [
+    "goofsterpack:glacio_ostrum_ore",
+    "goofsterpack:desh_ore",
+    "goofsterpack:calorite_ore",
+    "goofsterpack:etrium_ore",
     "goofsterpack:glacio_etrium_ore",
-    "goofsterpack:stone_etrium_ore"
+    "goofsterpack:deepslate_etrium_ore",
+    "goofsterpack:ostrum_ore",
+    "goofsterpack:glacio_calorite_ore",
+    "goofsterpack:glacio_desh_ore"
   ]
 }

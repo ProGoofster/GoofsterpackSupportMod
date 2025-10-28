@@ -2,23 +2,15 @@
   "values": [
     "goofsterpack:mars_tin_ore",
     "goofsterpack:glacio_tin_ore",
-    "goofsterpack:stone_certus_quartz_ore",
     "goofsterpack:venus_fluorite_ore",
-    "goofsterpack:end_certus_quartz_ore",
     "goofsterpack:venus_osmium_ore",
     "goofsterpack:mercury_fluorite_ore",
     "goofsterpack:moon_aluminum_ore",
     "goofsterpack:glacio_aluminum_ore",
     "goofsterpack:mars_osmium_ore",
-    "goofsterpack:stone_charged_certus_quartz_ore",
     "goofsterpack:glacio_fluorite_ore",
-    "goofsterpack:deepslate_certus_quartz_ore",
-    "goofsterpack:end_charged_certus_quartz_ore",
-    "goofsterpack:glacio_charged_certus_quartz_ore",
-    "goofsterpack:glacio_certus_quartz_ore",
     "goofsterpack:venus_tin_ore",
     "goofsterpack:glacio_osmium_ore",
-    "goofsterpack:deepslate_charged_certus_quartz_ore",
     "goofsterpack:mars_aluminum_ore"
   ]
 }

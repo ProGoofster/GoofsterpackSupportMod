@@ -22,7 +22,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
+        ModBlocks.ORE_DATA_MAP.forEach((block, data) -> {
+            oreSmelting(pWriter, List.of(block.get()), RecipeCategory.MISC,
+                    data.getSecond().getSmeltedItem().get(), 0.7f, 200, "smelting");
 
+            oreBlasting(pWriter, List.of(block.get()), RecipeCategory.MISC,
+                    data.getSecond().getSmeltedItem().get(), 0.7f, 100, "blasting");
+        });
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {

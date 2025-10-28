@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_etrium_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "goofsterpack:etrium_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "goofsterpack:etrium_ingot_from_blasting_etrium_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_etrium_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "goofsterpack:etrium_ingot_from_blasting_etrium_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}
